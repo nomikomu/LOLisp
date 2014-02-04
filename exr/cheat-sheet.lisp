@@ -126,3 +126,21 @@ body)
 (unless (oddp 4)
         (setf *number-is-odd* nil)
         'even-number)
+
+
+;; and,or
+(and (oddp 3) (oddp 5) (oddp 7)) ; => T
+(or (oddp 3) (oddp 4) (oddp 9))  ; => T
+(and (oddp 3) (oddp 5) (oddp 6)) ; => NIL
+(or (oddp 4) (oddp 6) (oddp 8))  ; => NIL
+
+; shortcut boolean
+(and *file-modified* (ask-user-about-saving) (save-file))
+; instead of
+(if *file-modified*
+    (if (ask-user-about-saving)
+        (save-file)))
+; or you can always do this:
+(if (and *file-modified*
+         (ask-user-about-saving))
+    (save-file))
