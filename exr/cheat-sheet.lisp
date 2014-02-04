@@ -21,13 +21,13 @@
 
 ;; set the local variables
 (let (variables)
-    (...body...))
+    (body))
 
 
 ;; set the local function
 (flet ((function_name (arguments)
-        ...function body...))
-...body...)
+        function body))
+body)
 ; example:
 (flet ((a (n)
           (+ n 10))
@@ -91,3 +91,38 @@
 (list 'pork 'beef 'chicken)
 ; output: (PORK BEEF CHICKEN)
 
+
+;; conditions - if
+; TESTS
+(if '()
+    'i-am-true
+    'i-am-false)
+; i-am-false
+(if '(1)
+    'i-am-true
+    'i-am-false)
+; i-am-true
+(eq '() nil)  ; ==> T
+(eq '() ())   ; ==> T
+(eq '() 'nil) ; ==> T
+
+
+;; progn
+(defvar *number-was-odd* nil)
+(if (oddp 5)
+    (progn (setf *number-was-odd* t)
+           'odd-number')
+    'even-number)
+
+
+;; conditions - when
+(defvar *number-is-odd* nil)
+(when (oddp 5)
+      (setf *number-is-odd* t)
+      'odd-number)
+
+
+;; conditions - unless
+(unless (oddp 4)
+        (setf *number-is-odd* nil)
+        'even-number)
