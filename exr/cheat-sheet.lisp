@@ -86,3 +86,8 @@
 ; output: BEEF
 (cadr '(pork beef chicken))
 ; output: BEEF
+
+;; LIST
+(list 'pork 'beef 'chicken)
+; output: (PORK BEEF CHICKEN)
+
