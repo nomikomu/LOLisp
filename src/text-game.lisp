@@ -20,3 +20,7 @@
 ; example usage:
 ;(describe-location 'living-room *nodes*)
 
+(defun describe-path (edge) 
+    '(there is a ,(caddr edge) going ,(cadr edge) from here.))
+;example usage:
+s;(describe-path '(garden west door))
