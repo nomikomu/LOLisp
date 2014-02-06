@@ -160,3 +160,10 @@ body)
 (defparameter *fruit* 'apple)
 (cond ((eq *fruit* 'apple)  'its-an-apple)
       ((eq *fruit* 'orange) 'its-an-orange))
+; eq - symbols
+; equal - everything else
+; eql - like eq but handles numbers
+;; equalp
+(equalp "Bob Smith" "bob smith") ; => T
+(equalp 0 0.0)                   ; => T
+; equalp can compare strings and int with float
