@@ -111,7 +111,7 @@ body)
 (defvar *number-was-odd* nil)
 (if (oddp 5)
     (progn (setf *number-was-odd* t)
-           'odd-number')
+           'odd-number)
     'even-number)
 
 
@@ -144,3 +144,13 @@ body)
 (if (and *file-modified*
          (ask-user-about-saving))
     (save-file))
+
+
+;; member and find if
+(if (member nil '(3 4 nil 5))
+    'nil-is-in-the-list
+    'nil-is-not-in-the-list)
+
+(if (find-if #'oddp '(2 4 5 6))
+    'there-is-an-odd-number
+    'there-is-no-odd-number)
