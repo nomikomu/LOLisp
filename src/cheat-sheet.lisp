@@ -154,3 +154,9 @@ body)
 (if (find-if #'oddp '(2 4 5 6))
     'there-is-an-odd-number
     'there-is-no-odd-number)
+
+
+;; comparing
+(defparameter *fruit* 'apple)
+(cond ((eq *fruit* 'apple)  'its-an-apple)
+      ((eq *fruit* 'orange) 'its-an-orange))
